@@ -1,0 +1,40 @@
+{
+    "name": "setrun/setrun-user",
+    "description": "User component for SETRUN CMS",
+    "keywords": ["yii2", "setrun", "framework", "module", "component", "yii2-extension", "extension"],
+    "homepage": "http://setrun.ru",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name" : "Alexey Bashkov",
+            "email": "ab@smpage.ru",
+            "role" : "Ui Ux Designer"
+        },
+        {
+            "name" : "Denis Utkin",
+            "email": "dizirator@gmail.com",
+            "role" : "Developer",
+            "homepage": "http://github.com/dizirator"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "setrun/setrun-sys": "*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "setrun\\user\\": "src/"
+        }
+    },
+    "config": {
+        "process-timeout": 1800
+    }
+}
