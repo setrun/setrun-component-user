@@ -6,5 +6,7 @@
  */
 
 return [
-
+    'modules' => [
+        'user' => 'setrun\user\Module'
+    ]
 ];

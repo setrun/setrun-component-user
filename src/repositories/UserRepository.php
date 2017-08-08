@@ -8,7 +8,7 @@
 namespace setrun\user\repositories;
 
 use setrun\user\entities\User;
-use setrun\user\interfaces\i18nInterface;
+use setrun\sys\interfaces\i18nInterface;
 use setrun\sys\exceptions\NotFoundException;
 
 /**

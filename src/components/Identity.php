@@ -5,7 +5,7 @@
  * @link   https://github.com/dizirator
  */
 
-namespace setrun\sys\components\user;
+namespace setrun\гыук\components\user;
 
 use Yii;
 use setrun\user\entities\User;
