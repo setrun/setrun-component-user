@@ -60,13 +60,13 @@ class AuthService
         $user = $this->user->findByUsernameOrEmail($form->username);
         if (!$user || !$user->validatePassword($form->password)) {
             $this->setFailure();
-            throw new \DomainException($this->i18n->t('sys/user', 'Wrong Username or Password'));
+            throw new \DomainException($this->i18n->t('setrun/user', 'Wrong Username or Password'));
         }
         if ($user && $user->status == User::STATUS_BLOCKED) {
-            throw new \DomainException($this->i18n->t('sys/user', 'Account temporarily blocked'));
+            throw new \DomainException($this->i18n->t('setrun/user', 'Account temporarily blocked'));
         }
         if ($user && $user->status == User::STATUS_WAIT) {
-            throw new \DomainException($this->i18n->t('sys/user', 'Account not confirmed'));
+            throw new \DomainException($this->i18n->t('setrun/user', 'Account not confirmed'));
         }
         $this->removeFailure();
         return $user;
@@ -83,7 +83,7 @@ class AuthService
         if ($failure >= static::FAILURE) {
             if ($time >= time()) {
                 throw new \DomainException($this->i18n->t(
-                    'sys/user',
+                    'setrun/user',
                     'Form is blocked for {min} minutes',
                     ['min' => static::FAILURE_TIME / 60])
                 );

@@ -6,6 +6,20 @@
  */
 
 return [
+    'components' => [
+        'i18n' => [
+            'translations' => [
+                'setrun/user' => [
+                    'class'    => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@setrun/user/messages',
+                    'fileMap' => [
+                        'setrun/user' => 'user.php',
+
+                    ]
+                ]
+            ]
+        ],
+    ],
     'modules' => [
         'user' => 'setrun\user\Module'
     ]

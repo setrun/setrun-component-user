@@ -1,0 +1,43 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.login-wrap {
+    top: 50%;
+    left: 50%;
+    width: 360px;
+    position: absolute;
+    margin-top: -140px;
+    margin-left: -180px;
+
+}
+
+.login-page{
+    background: #475269;
+}
+.login-box {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.login-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+    border-bottom: 15px solid #337ab7;
+    height: 100%;
+}
+
+.login-box-msg{
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+

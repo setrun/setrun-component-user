@@ -69,16 +69,16 @@ class User extends ActiveRecord implements HybridManagerInterface
     {
         return [
             'id'                   => 'ID',
-            'auth_key'             => Yii::t('sys/user', 'Auth Key'),
-            'username'             => Yii::t('sys/user', 'Username'),
-            'password_hash'        => Yii::t('sys/user', 'Password Hash'),
-            'password_reset_token' => Yii::t('sys/user', 'Password Reset Token'),
-            'email'                => Yii::t('sys/user', 'Email'),
-            'email_confirm_token'  => Yii::t('sys/user', 'Email Confirm Token'),
-            'status'               => Yii::t('sys/user', 'Status'),
-            'role'                 => Yii::t('sys/user', 'Role'),
-            'created_at'           => Yii::t('sys/user', 'Created At'),
-            'updated_at'           => Yii::t('sys/user', 'Updated At'),
+            'auth_key'             => Yii::t('setrun/user', 'Auth Key'),
+            'username'             => Yii::t('setrun/user', 'Username'),
+            'password_hash'        => Yii::t('setrun/user', 'Password Hash'),
+            'password_reset_token' => Yii::t('setrun/user', 'Password Reset Token'),
+            'email'                => Yii::t('setrun/user', 'Email'),
+            'email_confirm_token'  => Yii::t('setrun/user', 'Email Confirm Token'),
+            'status'               => Yii::t('setrun/user', 'Status'),
+            'role'                 => Yii::t('setrun/user', 'Role'),
+            'created_at'           => Yii::t('setrun/user', 'Created At'),
+            'updated_at'           => Yii::t('setrun/user', 'Updated At'),
         ];
     }
 
@@ -98,9 +98,9 @@ class User extends ActiveRecord implements HybridManagerInterface
     public static function getStatusesArray() : array
     {
         return [
-            self::STATUS_BLOCKED => Yii::t('sys/user', 'Blocked'),
-            self::STATUS_ACTIVE  => Yii::t('sys/user', 'Active'),
-            self::STATUS_WAIT    => Yii::t('sys/user', 'Wait')
+            self::STATUS_BLOCKED => Yii::t('setrun/user', 'Blocked'),
+            self::STATUS_ACTIVE  => Yii::t('setrun/user', 'Active'),
+            self::STATUS_WAIT    => Yii::t('setrun/user', 'Wait')
         ];
     }
 
@@ -160,7 +160,7 @@ class User extends ActiveRecord implements HybridManagerInterface
     public function confirmSignup() : void
     {
         if (!$this->isWait()) {
-            throw new \DomainException(Yii::t('sys/user', 'User is already active'));
+            throw new \DomainException(Yii::t('setrun/user', 'User is already active'));
         }
         $this->status = self::STATUS_ACTIVE;
         $this->removeEmailConfirmToken();
@@ -173,7 +173,7 @@ class User extends ActiveRecord implements HybridManagerInterface
     public function requestPasswordReset() : void
     {
         if (!empty($this->password_reset_token) && self::isPasswordResetTokenValid($this->password_reset_token)) {
-            throw new \DomainException(Yii::t('sys/user', 'Password resetting is already requested'));
+            throw new \DomainException(Yii::t('setrun/user', 'Password resetting is already requested'));
         }
         $this->generatePasswordResetToken();
     }
@@ -186,7 +186,7 @@ class User extends ActiveRecord implements HybridManagerInterface
     public function resetPassword(string $password) : void
     {
         if (empty($this->password_reset_token)) {
-            throw new \DomainException(Yii::t('sys/user', 'Password resetting is not requested'));
+            throw new \DomainException(Yii::t('setrun/user', 'Password resetting is not requested'));
         }
         $this->setPassword($password);
         $this->removePasswordResetToken();

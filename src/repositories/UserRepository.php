@@ -138,7 +138,7 @@ class UserRepository
     public function save(User $user) : bool
     {
         if (!$user->save()) {
-            throw new \RuntimeException($this->i18n->t('sys/user', 'Saving error'));
+            throw new \RuntimeException($this->i18n->t('setrun/user', 'Saving error'));
         }
         return true;
     }
@@ -151,7 +151,7 @@ class UserRepository
     public function remove(User $user) : bool
     {
         if (!$user->delete()) {
-            throw new \RuntimeException($this->i18n->t('sys/user', 'Removing error'));
+            throw new \RuntimeException($this->i18n->t('setrun/user', 'Removing error'));
         }
         return true;
     }
@@ -164,7 +164,7 @@ class UserRepository
     public function getBy(array $condition) : User
     {
         if (!$user = User::find()->andWhere($condition)->limit(1)->one()) {
-            throw new NotFoundException($this->i18n->t('sys/user', 'User not found'));
+            throw new NotFoundException($this->i18n->t('setrun/user', 'User not found'));
         }
         return $user;
     }
