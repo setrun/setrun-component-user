@@ -8,14 +8,11 @@
 namespace setrun\user\commands;
 
 use Yii;
-use yii\rbac\Role;
-use yii\rbac\Rule;
-use yii\helpers\Json;
-use yii\helpers\Console;
-use yii\rbac\Permission;
+use yii\helpers\{Json, Console};
 use setrun\user\components\Rbac;
-use setrun\sys\helpers\ArrayHelper;
+use yii\rbac\{Role, Rule, Permission};
 use setrun\user\components\rbac\HybridManager;
+use setrun\sys\helpers\{FileHelper, ArrayHelper};
 
 /**
  * Interactive console rbac manager.
@@ -104,18 +101,7 @@ class RbacController extends UserAbstractController
      */
     protected function loadConfig() : array
     {
-        $modulesPath = ROOT_DIR . '/modules';
-        $config = [];
-        /** @var $item \SplFileInfo  */
-        foreach (new \GlobIterator($modulesPath . '/*/config/rbac.php') as $item) {
-            $module = require $item->getRealPath();
-            if ($module instanceof \Closure) {
-                $config = $module($config);
-            } else if(is_array($module)) {
-                $config = array_replace_recursive($config, $module);
-            }
-        }
-        return $config;
+       return FileHelper::loadExtensionsFiles('config/rbac.php');
     }
 
     /**
