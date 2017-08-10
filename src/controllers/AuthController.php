@@ -8,11 +8,10 @@
 namespace setrun\user\controllers;
 
 use Yii;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 use setrun\user\forms\LoginForm;
 use setrun\user\components\Identity;
 use setrun\user\services\AuthService;
+use yii\filters\{VerbFilter, AccessControl};
 use setrun\sys\components\controllers\FrontController;
 
 /**

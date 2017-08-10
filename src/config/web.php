@@ -8,7 +8,7 @@
 return [
     'components' => [
         'user' => [
-            'identityClass' => 'setrun\sys\components\Identity',
+            'identityClass' => 'setrun\user\components\Identity',
             'enableAutoLogin' => true,
             'loginUrl' => ['user/auth/login'],
         ],
