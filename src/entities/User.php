@@ -39,7 +39,7 @@ class User extends ActiveRecord implements HybridManagerInterface
      */
     public static function tableName()
     {
-        return '{{%user}}';
+        return '{{%suser}}';
     }
 
     /**

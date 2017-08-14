@@ -13,6 +13,20 @@ use yii\web\IdentityInterface;
 use yii\base\NotSupportedException;
 use setrun\user\repositories\UserRepository;
 
+/**
+ * User Identity class.
+ * @property integer $id
+ * @property string  $username
+ * @property string  $auth_key
+ * @property string  $password_hash
+ * @property string  $password_reset_token
+ * @property string  $email
+ * @property string  $email_confirm_token
+ * @property integer $status
+ * @property string  $role
+ * @property integer $created_at
+ * @property integer $updated_at
+ */
 class Identity implements IdentityInterface
 {
     /**

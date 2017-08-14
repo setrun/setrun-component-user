@@ -33,5 +33,8 @@ return [
     'User not found' => 'Пользователь не найден',
     'Saving error' => 'Ошибка при сохранении',
     'Form is blocked for {min} minutes' => 'Форма заблокирована на {min} минут',
-    'Authorization item [{role}] has already been assigned to user [{id}]' => 'Роль [{role}] элемента авторизации уже назначена пользователю [{id}]'
+    'Authorization item [{role}] has already been assigned to user [{id}]' => 'Роль [{role}] элемента авторизации уже назначена пользователю [{id}]',
+    'Users' => 'Пользователи',
+    'Roles' => 'Роли',
+    'Permissions' => 'Привилегии'
 ];
