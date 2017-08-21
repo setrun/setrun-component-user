@@ -7,7 +7,7 @@
 
 namespace setrun\user\assets;
 
-use setrun\sys\components\web\AssetBundle;
+use setrun\sys\over\web\AssetBundle;
 
 class LoginAsset extends AssetBundle
 {
