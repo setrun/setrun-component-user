@@ -1,5 +1,5 @@
 {
-    "name": "setrun/setrun-user-component",
+    "name": "setrun/setrun-component-user",
     "description": "User component for SETRUN CMS",
     "keywords": ["yii2", "yii2-extension", "yii2-cms", "cms", "setrun", "setrun-cms", "setrun-extension"],
     "homepage": "http://setrun.ru",
@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "setrun/setrun-sys-component": "*"
+        "setrun/setrun-component-sys": "*"
     },
     "repositories": [
         {
