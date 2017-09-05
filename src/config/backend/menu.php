@@ -8,7 +8,7 @@
 return [
     'b-user' => [
         'label' => Yii::t('setrun/user', 'Users'),
-        'icon'  => 'user',
+        'icon'  => 'user-o',
         'url'   => '#',
         'items' => [
             [
